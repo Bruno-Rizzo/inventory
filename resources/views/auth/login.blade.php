@@ -26,8 +26,8 @@
         <div class="col-xxl-4 col-xl-5 col-lg-6 col-md-7 col-sm-8">
             <div class="card shadow-lg">
                 <div class="card-body p-4">
-                    <h1 class="fs-4 text-center fw-bold mb-4">Login</h1>
-                    <h1 class="fs-6 mb-3">Please enter your email and password to log in.</h1>
+                    <h1 class="fs-4 text-center fw-bold mb-4">Inventory | Login</h1>
+                    <h1 class="fs-6 mb-3">Digite seus dados para acessar</h1>
 
                     <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
@@ -35,26 +35,26 @@
                         autocomplete="off">
                         @csrf
                         <div class="mb-3">
-                            <label class="mb-2 text-muted" for="email">E-Mail Address</label>
+                            <label class="mb-2 text-muted" for="email">Email</label>
                             <div class="input-group input-group-join mb-3">
                                 <input id="email" type="email" placeholder="Enter Email" class="form-control"
                                     name="email" required autofocus>
                                     <span class="input-group-text rounded-end">&nbsp<i class="fa fa-envelope"></i>&nbsp</span>
                                 <div class="invalid-feedback">
-                                    Email is invalid
+                                    O email é inválido
                                 </div>
                             </div>
                         </div>
 
                         <div class="mb-3">
                             <div class="mb-2 w-100">
-                                <label class="text-muted" for="password">Password</label>
+                                <label class="text-muted" for="password">Senha</label>
                            </div>
                             <div class="input-group input-group-join mb-3">
                                 <input type="password" class="form-control" placeholder="Your password" required name="password">
                                 <span class="input-group-text rounded-end password cursor-pointer">&nbsp<i class="fa fa-eye"></i>&nbsp</span>
                                 <div class="invalid-feedback">
-                                    Password required
+                                    A senha é obrigatória
                                 </div>
                             </div>
                         </div>
