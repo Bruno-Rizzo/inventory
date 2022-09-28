@@ -29,3 +29,25 @@
         });
     });
 </script>
+
+<script>
+
+$(function(){
+    $(document).on('change','#supplier_id',function(){
+        var supplier_id = $(this).val();
+        $.ajax({
+            url:"{{route('categories.get')}}",
+            type:"GET",
+            data:{supplier_id:supplier_id},
+            success:function(data){
+                var html = ' <option value=""> Selecione </option>'
+                $.each(data,function(key,v){
+                    html += '<option value=" '+v.category_id' "> '+v.category.name+' </option>'
+                });
+                $('#category_id').html(html);
+            }
+        })
+    });
+});
+
+</script>

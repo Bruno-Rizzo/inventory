@@ -4,11 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use OwenIt\Auditing\Contracts\Auditable;
 
-class Supplier extends Model
+class Supplier extends Model implements Auditable
 {
     use HasFactory;
     protected $guarded = [];
+
+    use \OwenIt\Auditing\Auditable;
 
     public function products()
     {

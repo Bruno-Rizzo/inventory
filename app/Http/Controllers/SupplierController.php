@@ -56,7 +56,7 @@ class SupplierController extends Controller
         $this->authorize('update', Supplier::class);
         $validated = $request->validate([
             'name'    => ['required','min:2'],
-            'mobile'  => ['numeric'],
+            'mobile'  => ['required'],
             'email'   => ['email'],
             'address' => ['required'],
         ]);

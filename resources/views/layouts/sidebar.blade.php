@@ -32,29 +32,35 @@
 
             @can('admin_only')
             <li class="@if (Request::routeIs('users.index') ||
-                Request::routeIs('users.create') ||
-                Request::routeIs('users.edit') ||
-                Request::routeIs('roles.index') ||
-                Request::routeIs('roles.create') ||
-                Request::routeIs('roles.edit') ||
-                Request::routeIs('users.search') ||
-                Request::routeIs('users.find') ||
-                Request::routeIs('users.show') ||
-                Request::routeIs('users.password')) {{ 'active open' }} @endif">
+                Request::routeIs('users.create')    ||
+                Request::routeIs('users.edit')      ||
+                Request::routeIs('roles.index')     ||
+                Request::routeIs('roles.create')    ||
+                Request::routeIs('roles.edit')      ||
+                Request::routeIs('users.search')    ||
+                Request::routeIs('users.find')      ||
+                Request::routeIs('users.show')      ||
+                Request::routeIs('users.password')  ||
+                Request::routeIs('audits.index')    ||
+                Request::routeIs('audits.find')     ||
+                Request::routeIs('audits.show'))    {{ 'active open' }} @endif">
                 <a href="#" class="main-menu has-dropdown">
                     <i class="ti-settings"></i>
                     <span>Configurações</span>
                 </a>
                 <ul class="sub-menu @if (Request::routeIs('users.index') ||
-                    Request::routeIs('users.create') ||
-                    Request::routeIs('users.edit') ||
-                    Request::routeIs('roles.index') ||
-                    Request::routeIs('roles.create') ||
-                    Request::routeIs('roles.edit') ||
-                    Request::routeIs('users.search') ||
-                    Request::routeIs('users.find') ||
-                    Request::routeIs('users.show') ||
-                    Request::routeIs('users.password')) {{ 'expand' }} @endif">
+                    Request::routeIs('users.create')    ||
+                    Request::routeIs('users.edit')      ||
+                    Request::routeIs('roles.index')     ||
+                    Request::routeIs('roles.create')    ||
+                    Request::routeIs('roles.edit')      ||
+                    Request::routeIs('users.search')    ||
+                    Request::routeIs('users.find')      ||
+                    Request::routeIs('users.show')      ||
+                    Request::routeIs('users.password')  ||
+                    Request::routeIs('audits.index')    ||
+                    Request::routeIs('audits.find')     ||
+                    Request::routeIs('audits.show'))    {{ 'expand' }} @endif">
                     <li class="@if (Request::routeIs('users.index') || Request::routeIs('users.create') || Request::routeIs('users.edit')) {{ 'active' }} @endif">
                         <a href="{{ route('users.index') }}" class="link">
                             <span>Usuários</span>
@@ -71,6 +77,13 @@
                         Request::routeIs('users.password')) {{ 'active' }} @endif">
                         <a href="{{ route('users.search') }}" class="link">
                             <span>Senhas</span>
+                        </a>
+                    </li>
+                    <li class="@if (Request::routeIs('audits.index') ||
+                        Request::routeIs('audits.find') ||
+                        Request::routeIs('audits.show')) {{ 'active' }} @endif">
+                        <a href="{{ route('audits.index') }}" class="link">
+                            <span>Auditoria</span>
                         </a>
                     </li>
                 </ul>

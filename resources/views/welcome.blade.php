@@ -57,7 +57,7 @@
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="index.html"><span>Inventory</span></a></h1>
+      <h1 class="logo"><a href="index.html">Inventory <span> Express </span></a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a>-->
 
@@ -84,10 +84,8 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
-    <div class="container" data-aos="zoom-out" data-aos-delay="100">
-      <h1>Bem vindo ao Inventory</h1>
-      <h2>Uma empresa criada para agilizar o fluxo de entrega do seu negócio</h2>
+  <section id="hero" class="d-flex">
+    <div class="container" data-aos="zoom-out" data-aos-delay="100" style="position:absolute;bottom:11px">
       <div class="d-flex">
         <a href="#about" class="btn-get-started scrollto">Coneça a Empresa</a>
       </div>

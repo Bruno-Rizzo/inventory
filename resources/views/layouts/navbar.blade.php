@@ -15,7 +15,8 @@
                 <a href="#" class="user-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
                     <div class="label">
                         <span></span>
-                        <div>{{Auth::user()->name}}</div>
+                        <div class="text-center">{{Auth::user()->name}}</div>
+                        <div class="text-center" style="font-size: 10px">{{Auth::user()->role->name}}</div>
                     </div>
                     <img class="img-user rounded-circle" src="{{asset('/assets/images/'.Auth::user()->image)}}" alt="user"srcset="">
                 </a>

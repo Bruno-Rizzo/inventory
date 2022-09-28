@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\AuditController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\UnitController;
@@ -34,7 +35,7 @@ Route::middleware('auth')->group(function(){
             Route::get('/users/search',         'search')   ->name('users.search');
             Route::post('/users/search',        'findUser') ->name('users.find');
             Route::get('/users/{user}/show',    'show')     ->name('users.show');
-            Route::put('users/password/{user}', 'password') ->name('users.password');
+            Route::put('/users/password/{user}', 'password') ->name('users.password');
         });
 
         Route::controller(RoleController::class)->group(function(){
@@ -46,6 +47,13 @@ Route::middleware('auth')->group(function(){
             Route::get('/roles/confirm/{id}',         'confirm')          ->name('roles.confirm');
             Route::get('/roles/delete/{id}',          'delete')           ->name('roles.delete');
             Route::post('/roles/{role}/permissions/', 'assignPermission') ->name('roles.permissions');
+        });
+
+        Route::controller(AuditController::class)->group(function(){
+            Route::get('/audits',                'index')    ->name('audits.index');
+            Route::get('/audits/search',         'search')   ->name('audits.search');
+            Route::post('/audits/search',        'find')     ->name('audits.find');
+            Route::get('/audits/{audit}/show',   'show')     ->name('audits.show');
         });
 
     });
@@ -88,6 +96,7 @@ Route::middleware('auth')->group(function(){
         Route::put('/categories/{category}',      'update')  ->name('categories.update');
         Route::get('/categories/confirm/{id}',    'confirm') ->name('categories.confirm');
         Route::get('/categories/delete/{id}',     'delete')  ->name('categories.delete');
+        Route::get('/categories/get/',            'get')     ->name('categories.get');
     });
 
     Route::controller(ProductController::class)->group(function(){

@@ -30,7 +30,7 @@ class CustomerController extends Controller
         $this->authorize('create', Customer::class);
         $validated = $request->validate([
             'name'    => ['required','min:5'],
-            'mobile'  => ['numeric'],
+            'mobile'  => ['required'],
             'email'   => ['email'],
             'address' => ['required'],
         ]);
@@ -56,7 +56,7 @@ class CustomerController extends Controller
         $this->authorize('update', Customer::class);
         $validated = $request->validate([
             'name'    => ['required','min:5'],
-            'mobile'  => ['numeric'],
+            'mobile'  => ['required'],
             'email'   => ['email'],
             'address' => ['required'],
         ]);
